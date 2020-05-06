@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivPersonPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@id/glTopToImgBottom"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mtrl_card_spacing"
+        android:layout_marginTop="@dimen/mtrl_card_spacing"
+        android:layout_marginRight="@dimen/mtrl_card_spacing"
+        android:layout_marginBottom="@dimen/mtrl_card_spacing"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@id/glTopToImgBottom"
+        app:strokeWidth="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <ImageView
+                android:id="@+id/ivPersonIconName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_person"
+                app:layout_constraintBottom_toTopOf="@id/ivPersonIconBirthYear"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPersonTitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre:"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/ivPersonIconBirthYear"
+                app:layout_constraintLeft_toRightOf="@id/ivPersonIconName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/ivPersonIconBirthYear"
+                app:layout_constraintLeft_toRightOf="@id/tvPersonTitleName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivPersonIconBirthYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/ic_cake"
+                app:layout_constraintBottom_toTopOf="@id/ivPersonIconGender"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivPersonIconName" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPersonTitleBirthYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Año nacimiento:"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/ivPersonIconGender"
+                app:layout_constraintLeft_toRightOf="@id/ivPersonIconBirthYear"
+                app:layout_constraintTop_toBottomOf="@id/ivPersonIconName" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPersonBirthYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:layout_constraintBottom_toTopOf="@id/ivPersonIconGender"
+                app:layout_constraintLeft_toRightOf="@id/tvPersonTitleBirthYear"
+                app:layout_constraintTop_toBottomOf="@id/ivPersonIconName" />
+
+            <ImageView
+                android:id="@+id/ivPersonIconGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/ic_android"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivPersonIconBirthYear" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPersonTitleGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Género:"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/ivPersonIconGender"
+                app:layout_constraintTop_toBottomOf="@id/ivPersonIconBirthYear" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPersonGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tvPersonTitleGender"
+                app:layout_constraintTop_toBottomOf="@id/ivPersonIconBirthYear" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTopToImgBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
